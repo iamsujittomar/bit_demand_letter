@@ -162,6 +162,7 @@
         top: 0;
         width: 100%;
         box-shadow: none;
+        z-index: -1
       }
       #printBtn #printBtn * {
         display: none;
@@ -325,6 +326,9 @@
                 "semester",
                 "fee"
         ];
+      document.getElementById("certificate").style.visibility = "visible";
+      document.getElementById("certificate").style.position = "relative";
+      document.getElementById("certificate").style.zIndex = "1";
 
         let allFilled = true;
         let missingFields = [];
@@ -473,7 +477,10 @@
             setTimeout(() => {
                 certificate.style.display = "none"; // optional
                 document.getElementById("printBtn").innerText = "";
-            }, 500);
+                certificate.style.visibility = "hidden";
+                certificate.style.position = "absolute";
+                certificate.style.zIndex = "-1";
+            }, 1000);
         });
     
     
