@@ -151,27 +151,27 @@
 
     @media print {
       body * {
-/*         visibility: hidden; */
-        display: none;
+        visibility: hidden;
+/*         display: none; */
       }
       #certificate, #certificate * {
-/*         visibility: visible; */
-        display: block;
+        visibility: visible;
+/*         display: block; */
       }
       #certificate {
         position: static;
-/*         left: 0;
-        top: 0; */
+        left: 0;
+        top: 0;
         width: 100%;
         box-shadow: none;
-/*         z-index: 1; */
+        z-index: 1;
         margin: 0, auto;
         padding: 0;
       }
       #printBtn #printBtn * {
-        display: none;
-/*         visibility: hidden;
-        color: #ffffff; */
+/*         display: none; */
+        visibility: hidden;
+        color: #ffffff;
       }
     }
 
@@ -475,15 +475,15 @@
     // });
 
         document.getElementById("printBtn").addEventListener("click", () => {
-            // const certificate = document.getElementById("certificate");
+            const certificate = document.getElementById("certificate");
             window.print();
-            // setTimeout(() => {
-            //     certificate.style.display = "none"; // optional
-            //     document.getElementById("printBtn").innerText = "";
-            //     certificate.style.visibility = "hidden";
-            //     certificate.style.position = "absolute";
-            //     // certificate.style.zIndex = "-1";
-            // }, 1000);
+            setTimeout(() => {
+                certificate.style.display = "none"; // optional
+                document.getElementById("printBtn").innerText = "";
+                certificate.style.visibility = "hidden";
+                certificate.style.position = "absolute";
+                // certificate.style.zIndex = "-1";
+            }, 1000);
         });
     
     
