@@ -179,7 +179,7 @@
 
   </style>
 </head>
-<body>
+<body id="body">
 
   <div class="header">
     <h1>BUDDHA INSTITUTE OF TECHNOLOGY</h1>
@@ -480,12 +480,15 @@
 
         document.getElementById("printBtn").addEventListener("click", () => {
             const certificate = document.getElementById("certificate");
+            const bodySection = document.getElementById("body");
             
             window.print();
             setTimeout(() => {
                 certificate.style.display = "none"; // optional
+                bodySection.style.display = "none"
                 certificate.style.visibility = "hidden";
                 certificate.style.position = "absolute";
+                document.getElementById("certificate")
                 // certificate.style.zIndex = "-1";
             }, 1000);
         });
