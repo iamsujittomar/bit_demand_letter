@@ -148,7 +148,9 @@
       line-height: normal;
     }
 
-
+    #printBtnDiv{
+      visibility: hidden;
+    }
     @media print {
       body * {
         visibility: hidden;
@@ -315,8 +317,9 @@
     </p>
 
     <div class="signature">Principal</div>
-    <div style="width: 100%; align-items: center; text-align: center;"><button id="printBtn" style="color: white;">Print</button></div>
   </div>
+
+  <div style="width: 100%; align-items: center; text-align: center;" id="printBtnDiv"><button id="printBtn" style="color: white;">Print</button></div>
 
   <script>
     document.getElementById("generate-btn").addEventListener("click", () => {
@@ -332,6 +335,7 @@
         ];
       document.getElementById("certificate").style.visibility = "visible";
       document.getElementById("certificate").style.position = "relative";
+      document.getElementById("printBtnDiv").style.visibility = "visible";
 
         let allFilled = true;
         let missingFields = [];
