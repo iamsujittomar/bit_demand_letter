@@ -480,7 +480,7 @@
 
         document.getElementById("printBtn").addEventListener("click", () => {
             const certificate = document.getElementById("certificate");
-            sessionStorage.setItem("printTriggered", "true"); // set flag
+            
             window.print();
             setTimeout(() => {
                 certificate.style.display = "none"; // optional
@@ -488,15 +488,7 @@
                 certificate.style.position = "absolute";
                 // certificate.style.zIndex = "-1";
             }, 1000);
-
-            window.addEventListener("pageshow", (event) => {
-            if (sessionStorage.getItem("printTriggered") === "true") {
-            sessionStorage.removeItem("printTriggered"); // remove after reload
-            if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
-            location.reload();
-          }}
         });
-
 });
   </script>
 </body>
